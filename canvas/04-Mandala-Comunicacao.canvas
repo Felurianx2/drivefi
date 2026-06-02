@@ -1,0 +1,106 @@
+{
+	"nodes": [
+		{
+			"id": "c1grp",
+			"type": "group",
+			"x": 80,
+			"y": 60,
+			"width": 2840,
+			"height": 2040,
+			"color": "6",
+			"label": "Mandala 4 · Comunicação (hexágono)"
+		},
+		{
+			"id": "c1core",
+			"type": "text",
+			"x": 1200,
+			"y": 885,
+			"width": 500,
+			"height": 290,
+			"color": "2",
+			"text": "# Núcleo\n\n**Mensagem consistente** — o que o produto **é** / **não é**; incertezas explícitas.\n\nConfiança > hype; alinhado a counsel.\n\nDoc: **comunicação & narrativa**."
+		},
+		{
+			"id": "c1doc",
+			"type": "file",
+			"x": 2330,
+			"y": 190,
+			"width": 420,
+			"height": 140,
+			"color": "2",
+			"file": "docs/Comunicacao-Narrativa-Regulatoria.md"
+		},
+		{
+			"id": "c1petal1",
+			"type": "text",
+			"x": 1257,
+			"y": 275,
+			"width": 385,
+			"height": 340,
+			"text": "## Pétala · Pitch\n\n30 s / 3 min / 1 página / deck\n\nFluxo de valor sem promessa ilegal de retorno"
+		},
+		{
+			"id": "c1petal2",
+			"type": "text",
+			"x": 1772,
+			"y": 572,
+			"width": 385,
+			"height": 380,
+			"text": "## Pétala · Linhas vermelhas\n\nEvitar: garantido, sem risco, classificações não confirmadas\n\nJurisdição; KYC; natureza do token\n\nClaims Arbitrum/Chainlink só se verdadeiros"
+		},
+		{
+			"id": "c1petal3",
+			"type": "text",
+			"x": 1772,
+			"y": 1167,
+			"width": 385,
+			"height": 370,
+			"text": "## Pétala · Parceiros\n\nDealer: docs VIN/RENAVAM\n\nLP institucional: memo risco\n\nIntegradores: sandbox + API\n\nPacote mídia"
+		},
+		{
+			"id": "c1petal4",
+			"type": "text",
+			"x": 1257,
+			"y": 1465,
+			"width": 385,
+			"height": 330,
+			"text": "## Pétala · FAQ risco\n\nAtraso, garantia, posse, token, perda LP, pausa\n\nResposta simples + doc legal"
+		},
+		{
+			"id": "c1petal5",
+			"type": "text",
+			"x": 742,
+			"y": 1167,
+			"width": 385,
+			"height": 370,
+			"text": "## Pétala · Glossário\n\nPool, LP, APR/APY, NFT veículo, USDC, oráculo\n\n**Uma** definição aprovada"
+		},
+		{
+			"id": "c1petal6",
+			"type": "text",
+			"x": 742,
+			"y": 572,
+			"width": 385,
+			"height": 350,
+			"text": "## Pétala · Tom & revisão\n\npt/en; draft → produto → counsel\n\nScreenshots financeiras = rótulo *demo*\n\nSincronizar quando chain ligar"
+		},
+		{
+			"id": "c1linkhub",
+			"type": "file",
+			"x": 2400,
+			"y": 80,
+			"width": 380,
+			"height": 120,
+			"file": "canvas/00-DriveFi-Hub-Mandalas.canvas"
+		}
+	],
+	"edges": [
+		{ "id": "c1z1", "fromNode": "c1core", "fromSide": "top", "toNode": "c1petal1", "toSide": "bottom" },
+		{ "id": "c1z2", "fromNode": "c1core", "fromSide": "right", "toNode": "c1petal2", "toSide": "left" },
+		{ "id": "c1z3", "fromNode": "c1core", "fromSide": "right", "toNode": "c1petal3", "toSide": "left" },
+		{ "id": "c1z4", "fromNode": "c1core", "fromSide": "bottom", "toNode": "c1petal4", "toSide": "top" },
+		{ "id": "c1z5", "fromNode": "c1core", "fromSide": "left", "toNode": "c1petal5", "toSide": "right" },
+		{ "id": "c1z6", "fromNode": "c1core", "fromSide": "left", "toNode": "c1petal6", "toSide": "right" },
+		{ "id": "c1z7", "fromNode": "c1core", "fromSide": "right", "toNode": "c1doc", "toSide": "left" }
+	]
+}

@@ -3,7 +3,7 @@ pragma solidity ^0.8.17;
 
 /**
  * VehicleSale.sol
- * - Accepts ERC20 installment payments (buyer must approve this contract)
+ * - Accepts ERC20 installment payments in USDC (buyer must approve this contract)
  * - Tracks installmentsPaid
  * - Uses Chainlink Automation (KeeperCompatibleInterface) to automatically finalize sale:
  *    when installmentsPaid >= totalInstallments, Chainlink Automation will call performUpkeep,
@@ -28,7 +28,7 @@ contract VehicleSale is KeeperCompatibleInterface, ReentrancyGuard {
     IERC721 public nft;
     uint256 public tokenId;
 
-    // ERC20 payment token (ex: MockUSDT)
+    // ERC20 payment token (ex: MockUSDC or USDC)
     IERC20 public paymentToken;
 
     // Installment plan

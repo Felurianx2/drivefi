@@ -20,14 +20,14 @@ async function main() {
   const carNftAddress = await carNft.getAddress();
   console.log("✅ CarNFT deployed at:", carNftAddress);
 
-  // === 2️⃣ Deploy MockUSDT ===
-  const MockUSDT = await ethers.getContractFactory("usdtTest");
+  // === 2️⃣ Deploy MockUSDC ===
+  const MockUSDC = await ethers.getContractFactory("MockUSDC");
   const users = [seller.address, buyer.address];
-  const mockUsdt = await MockUSDT.deploy(deployer.address, users);
-  console.log("⏳ Waiting for MockUSDT deployment...");
-  await mockUsdt.waitForDeployment();
-  const usdtAddress = await mockUsdt.getAddress();
-  console.log("✅ MockUSDT deployed at:", usdtAddress);
+  const mockUsdc = await MockUSDC.deploy(deployer.address, users);
+  console.log("⏳ Waiting for MockUSDC deployment...");
+  await mockUsdc.waitForDeployment();
+  const usdcAddress = await mockUsdc.getAddress();
+  console.log("✅ MockUSDC deployed at:", usdcAddress);
 
   // === 3️⃣ Mint a test NFT for the seller ===
   console.log("⏳ Minting test NFT for the seller...");
@@ -58,13 +58,13 @@ async function main() {
   // === 4️⃣ Deploy VehicleSale ===
   const VehicleSale = await ethers.getContractFactory("VehicleSale");
   const totalInstallments = 12;
-  const installmentAmount = ethers.parseUnits("10", 6); // 10 USDT
+  const installmentAmount = ethers.parseUnits("10", 6); // 10 USDC
   const sale = await VehicleSale.deploy(
     seller.address,
     buyer.address,
     carNftAddress,
     tokenId,
-    usdtAddress,
+    usdcAddress,
     totalInstallments,
     installmentAmount
   );
@@ -94,7 +94,7 @@ async function main() {
   await verify("CarNFT", carNftAddress, ["CarNFT", "CARNFT"]);
   await delay(5000);
 
-  await verify("MockUSDT", usdtAddress, [deployer.address, users]);
+  await verify("MockUSDC", usdcAddress, [deployer.address, users]);
   await delay(5000);
 
   await verify("VehicleSale", saleAddress, [
@@ -102,17 +102,20 @@ async function main() {
     buyer.address,
     carNftAddress,
     tokenId,
-    usdtAddress,
+    usdcAddress,
     totalInstallments,
     installmentAmount,
   ]);
 
   console.log("\n🎉 Deployment complete!");
-  console.log({
-    CarNFT: carNftAddress,
-    MockUSDT: usdtAddress,
-    VehicleSale: saleAddress,
-  });
+  console.log("================================================");
+  console.log("📋 DEPLOYED CONTRACTS:");
+  console.log("================================================");
+  console.log("CarNFT:       ", carNftAddress);
+  console.log("MockUSDC:     ", usdcAddress);
+  console.log("VehicleSale:  ", saleAddress);
+  console.log("================================================");
+  console.log("\n💡 Save these addresses for your frontend integration!");
 }
 
 main().catch((error) => {

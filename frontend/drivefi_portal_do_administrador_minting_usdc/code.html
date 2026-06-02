@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary-fixed": "#0d1d2a",
+                "surface-container-highest": "#27354c",
+                "surface-container-low": "#0d1c32",
+                "outline": "#8f9097",
+                "tertiary": "#fbbc00",
+                "error": "#ffb4ab",
+                "on-secondary-fixed-variant": "#394857",
+                "inverse-on-surface": "#233148",
+                "on-secondary-container": "#a7b7c8",
+                "surface-bright": "#2c3951",
+                "on-tertiary-container": "#a67b00",
+                "on-tertiary-fixed": "#261a00",
+                "primary-container": "#00183c",
+                "primary-fixed-dim": "#adc7ff",
+                "surface-container-lowest": "#010e24",
+                "on-primary": "#002e68",
+                "surface-container-high": "#1c2a41",
+                "primary-fixed": "#d8e2ff",
+                "on-surface": "#d6e3ff",
+                "on-error-container": "#ffdad6",
+                "surface-variant": "#27354c",
+                "tertiary-container": "#231700",
+                "on-primary-fixed": "#001a41",
+                "surface": "#041329",
+                "secondary-fixed-dim": "#b8c8da",
+                "inverse-primary": "#005bc0",
+                "surface-container": "#112036",
+                "secondary-fixed": "#d4e4f6",
+                "background": "#041329",
+                "surface-dim": "#041329",
+                "on-tertiary": "#402d00",
+                "tertiary-fixed": "#ffdfa0",
+                "tertiary-fixed-dim": "#fbbc00",
+                "surface-tint": "#adc7ff",
+                "error-container": "#93000a",
+                "secondary-container": "#394857",
+                "on-primary-fixed-variant": "#004493",
+                "on-primary-container": "#167eff",
+                "secondary": "#b8c8da",
+                "inverse-surface": "#d6e3ff",
+                "on-secondary": "#223240",
+                "on-background": "#d6e3ff",
+                "on-error": "#690005",
+                "on-tertiary-fixed-variant": "#5c4300",
+                "outline-variant": "#44474d",
+                "primary": "#adc7ff",
+                "on-surface-variant": "#c5c6cd"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(39, 53, 76, 0.4);
+        backdrop-filter: blur(20px);
+      }
+      .primary-gradient {
+        background: linear-gradient(135deg, #adc7ff 0%, #167eff 100%);
+      }
+      body {
+        min-height: max(884px, 100dvh);
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen pb-32">
+<!-- TopAppBar (Admin Profile) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#041329]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center border border-primary/30">
+<span class="material-symbols-outlined text-primary" data-icon="admin_panel_settings">admin_panel_settings</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#adc7ff]" data-icon="directions_car">directions_car</span>
+<span class="font-headline font-bold tracking-tight text-2xl text-[#adc7ff] tracking-tighter">DriveFi</span>
+</div>
+<span class="text-[10px] text-primary font-bold uppercase tracking-widest">Profile: Administrator</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 mr-6">
+<a class="text-[#b8c8da] hover:brightness-125 transition-all font-headline font-bold text-sm uppercase tracking-wider" href="#">Dashboard</a>
+<a class="text-[#adc7ff] font-headline font-bold text-sm uppercase tracking-wider" href="#">Minting</a>
+<a class="text-[#b8c8da] hover:brightness-125 transition-all font-headline font-bold text-sm uppercase tracking-wider" href="#">Assets</a>
+<a class="text-[#b8c8da] hover:brightness-125 transition-all font-headline font-bold text-sm uppercase tracking-wider" href="#">System</a>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container hover:brightness-125 transition-all">
+<span class="material-symbols-outlined text-sm text-[#adc7ff]" data-icon="language">language</span>
+<span class="text-[10px] font-bold ml-1 text-[#adc7ff]">EN</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container hover:brightness-125 transition-all">
+<span class="material-symbols-outlined text-sm text-[#adc7ff]" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-6xl mx-auto">
+<!-- Editorial Header -->
+<div class="mb-12">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-primary mb-2 block font-bold">Authorized Dealer Portal</span>
+<h1 class="font-headline text-5xl font-extrabold tracking-tighter mb-4">Mint Vehicle Asset</h1>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<p class="text-secondary max-w-xl text-lg">Generate a unique digital twin on the blockchain. Contract: <code class="bg-surface-container-low px-2 py-1 rounded text-primary text-sm break-all">0xd4F5eA0C93E18013FB26C9C695d227B5B1bfE7e5</code></p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Form Stages -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Step 1: Asset Identity -->
+<section class="bg-surface-container-low border border-white/5 p-8 rounded-xl relative overflow-hidden">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4">
+<span class="w-8 h-8 rounded-full bg-primary-container text-primary flex items-center justify-center font-bold text-sm">01</span>
+<h2 class="font-headline text-xl font-bold">Asset Identity</h2>
+</div>
+<span class="material-symbols-outlined text-tertiary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Vehicle Identification Number (VIN)</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-transparent focus:border-primary transition-colors text-on-surface p-4 rounded-lg placeholder:text-outline/40" placeholder="17-Digit Alpha-Numeric" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Production Year</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-transparent focus:border-primary transition-colors text-on-surface p-4 rounded-lg placeholder:text-outline/40" placeholder="YYYY" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Make</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-transparent focus:border-primary transition-colors text-on-surface p-4 rounded-lg placeholder:text-outline/40" placeholder="e.g. Porsche" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Model</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-transparent focus:border-primary transition-colors text-on-surface p-4 rounded-lg placeholder:text-outline/40" placeholder="e.g. 911 GT3 RS" type="text"/>
+</div>
+</div>
+</section>
+<!-- Step 2: Verified Telemetry -->
+<section class="bg-surface-container-low border border-white/5 p-8 rounded-xl">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest text-secondary flex items-center justify-center font-bold text-sm">02</span>
+<h2 class="font-headline text-xl font-bold">Verified Telemetry</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Mileage (KM)</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-transparent focus:border-primary transition-colors text-on-surface p-4 rounded-lg placeholder:text-outline/40" placeholder="0.00" type="number"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-bold text-primary tracking-tighter">DATA SYNCED</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Service History Status</label>
+<select class="w-full bg-surface-container-lowest border-none border-b-2 border-transparent focus:border-primary transition-colors text-on-surface p-4 rounded-lg appearance-none">
+<option>Full Dealer History</option>
+<option>Partial History</option>
+<option>Third-Party Verified</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Step 3: Admin Escrow Configuration -->
+<section class="bg-surface-container-low border border-white/5 p-8 rounded-xl">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-sm">03</span>
+<h2 class="font-headline text-xl font-bold">Set Up Escrow</h2>
+</div>
+<div class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Escrow Duration (Days)</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-transparent focus:border-primary transition-colors text-on-surface p-4 rounded-lg placeholder:text-outline/40" placeholder="e.g. 30" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Commission Fee (%)</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-transparent focus:border-primary transition-colors text-on-surface p-4 rounded-lg placeholder:text-outline/40" placeholder="e.g. 2.5" type="number"/>
+</div>
+</div>
+<div class="p-4 bg-surface-container-high rounded-xl border border-white/5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="lock_clock">lock_clock</span>
+<div>
+<p class="text-sm font-bold">Enable Multi-Sig Verification</p>
+<p class="text-[10px] text-secondary">Requires second admin approval for disbursement</p>
+</div>
+</div>
+<button class="w-12 h-6 bg-primary rounded-full relative p-1 flex items-center transition-colors">
+<div class="w-4 h-4 bg-white rounded-full translate-x-6 shadow-sm"></div>
+</button>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">RENAVAM (National Registry)</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-transparent focus:border-primary transition-colors text-on-surface p-4 rounded-lg placeholder:text-outline/40" placeholder="Enter Registration Number" type="text"/>
+</div>
+</div>
+</section>
+<!-- Step 4: Documents -->
+<section class="bg-surface-container-low border border-white/5 p-8 rounded-xl">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest text-secondary flex items-center justify-center font-bold text-sm">04</span>
+<h2 class="font-headline text-xl font-bold">Provenance</h2>
+</div>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-8 flex flex-col items-center justify-center text-center gap-4 hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="cloud_upload">cloud_upload</span>
+<div>
+<p class="font-headline font-bold">Upload Provenance Documents</p>
+<p class="text-xs text-secondary">PDF, JPG, or PNG (Max 50MB)</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Preview & Escrow -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Preview Card -->
+<div class="glass-card border border-white/10 rounded-xl shadow-2xl overflow-hidden relative group">
+<div class="aspect-video w-full overflow-hidden rounded-lg relative">
+<img alt="Luxury sportscar" class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" data-alt="Modern dark gray high-performance sports car parked in a minimalist industrial concrete studio with dramatic rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK3OyxMDsauE0eHN9-qTzWZ5zcv51Ez6Ysr6vShAAksS69moBwgG65fGPjY35aHLkQb4mWItJS1JhKT8TYY6Cq8yho4NflG5uk3i3ojpJrEQHGbDFIu8Up-KTMmZDjxBdxTGuAaiy9O_4EKkdroyfH7bs_MqRf_IgIdxcGMzweidTO9QSoDoUpN1ksVys2MFW1NX2cl-FT4TPhXQGYwvOzVOKtjSBF-BQO_tJJ_3RveF6NzfJCfQ_DN706RM6Ra7tP8BmegI08Zxo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="font-label text-[10px] uppercase tracking-widest bg-primary/20 text-primary px-2 py-1 rounded backdrop-blur-md font-bold">CarNFT Preview</span>
+<h3 class="font-headline text-2xl font-extrabold mt-2 tracking-tight">Vehicle Asset NFT</h3>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-center border-b border-white/5 pb-3">
+<span class="text-secondary text-xs uppercase tracking-widest font-bold">Network Fee</span>
+<span class="text-on-surface font-mono text-sm">0.0042 USDC</span>
+</div>
+<div class="flex justify-between items-center border-b border-white/5 pb-3">
+<span class="text-secondary text-xs uppercase tracking-widest font-bold">Contract</span>
+<span class="text-primary font-mono text-[10px]">0xd4F5...bE7e5</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-secondary text-xs uppercase tracking-widest font-bold">Asset Class</span>
+<span class="text-tertiary font-bold text-sm">Verified Collectible</span>
+</div>
+</div>
+</div>
+<!-- Mint Control Panel -->
+<div class="bg-surface-container border border-white/5 p-8 rounded-xl space-y-8">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl border border-white/5">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-tertiary/10 rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="gavel">gavel</span>
+</div>
+<div>
+<p class="font-headline font-extrabold text-sm uppercase tracking-tight">Escrow Active</p>
+<p class="text-[10px] text-secondary font-bold">Auto-initialize VehicleSale Contract</p>
+</div>
+</div>
+<button class="w-12 h-6 bg-primary rounded-full relative p-1 flex items-center transition-colors">
+<div class="w-4 h-4 bg-white rounded-full translate-x-6 transition-transform shadow-sm"></div>
+</button>
+</div>
+<div class="space-y-3">
+<button class="w-full primary-gradient py-4 rounded-xl font-headline font-extrabold text-on-primary-fixed hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary/20 uppercase tracking-widest text-sm">
+                            Mint DriveFi NFT
+                        </button>
+<button class="w-full bg-surface-container-highest py-4 rounded-xl font-headline font-extrabold text-on-surface hover:bg-surface-bright active:scale-95 transition-all uppercase tracking-widest text-sm border border-white/5">
+                            Save Draft
+                        </button>
+</div>
+<div class="flex items-start gap-3 opacity-60">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+<p class="text-[10px] leading-relaxed font-medium uppercase tracking-tight">Administrator override: Verification of VIN and RENAVAM data is being performed under dealer license. Errors will be logged for audit.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Filtered for Admin) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-[#041329]/40 backdrop-blur-xl rounded-t-xl shadow-[0_-4px_40px_rgba(1,14,36,0.1)] md:hidden">
+<a class="flex flex-col items-center justify-center text-[#b8c8da] opacity-60 hover:bg-[#adc7ff]/5 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold mt-1">Dash</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#adc7ff]/10 text-[#adc7ff] rounded-xl px-3 py-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="toll" style="font-variation-settings: 'FILL' 1;">toll</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold mt-1">Mint</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b8c8da] opacity-60 hover:bg-[#adc7ff]/5 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="directions_car">directions_car</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold mt-1">Assets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b8c8da] opacity-60 hover:bg-[#adc7ff]/5 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold mt-1">Wallet</span>
+</a>
+</nav>
+</body></html>

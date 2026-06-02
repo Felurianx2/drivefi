@@ -3,7 +3,7 @@ pragma solidity ^0.8.17;
 
 /**
  * VehicleSale.sol
- * - Accepts ERC20 installment payments (buyer must approve this contract)
+ * - Accepts ERC20 installment payments in USDC (buyer must approve this contract)
  * - Tracks installmentsPaid
  * - Uses Chainlink Automation to automatically finalize sale
  */

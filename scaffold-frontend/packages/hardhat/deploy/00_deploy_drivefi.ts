@@ -22,20 +22,20 @@ const deployDriveFi: DeployFunction = async function (hre: HardhatRuntimeEnviron
 
   console.log("✅ CarNFT deployed at:", carNFT.address);
 
-  // Deploy MockUSDT
-  const mockUSDT = await deploy("usdtTest", {
+  // Deploy MockUSDC
+  const mockUSDC = await deploy("MockUSDC", {
     from: deployer,
     args: [deployer, [deployer]], // owner and initial users
     log: true,
     autoMine: true,
   });
 
-  console.log("✅ MockUSDT deployed at:", mockUSDT.address);
+  console.log("✅ MockUSDC deployed at:", mockUSDC.address);
 
   console.log("\n🎉 DriveFi contracts deployed successfully!");
   console.log("================================================");
   console.log("CarNFT:", carNFT.address);
-  console.log("MockUSDT:", mockUSDT.address);
+  console.log("MockUSDC:", mockUSDC.address);
   console.log("================================================\n");
 
   // Note: VehicleSale is deployed per transaction, not here

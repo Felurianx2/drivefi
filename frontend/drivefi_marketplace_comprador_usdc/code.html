@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#0d1d2a",
+                    "surface-container-highest": "#27354c",
+                    "surface-container-low": "#0d1c32",
+                    "outline": "#8f9097",
+                    "tertiary": "#fbbc00",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed-variant": "#394857",
+                    "inverse-on-surface": "#233148",
+                    "on-secondary-container": "#a7b7c8",
+                    "surface-bright": "#2c3951",
+                    "on-tertiary-container": "#a67b00",
+                    "on-tertiary-fixed": "#261a00",
+                    "primary-container": "#00183c",
+                    "primary-fixed-dim": "#adc7ff",
+                    "surface-container-lowest": "#010e24",
+                    "on-primary": "#002e68",
+                    "surface-container-high": "#1c2a41",
+                    "primary-fixed": "#d8e2ff",
+                    "on-surface": "#d6e3ff",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#27354c",
+                    "tertiary-container": "#231700",
+                    "on-primary-fixed": "#001a41",
+                    "surface": "#041329",
+                    "secondary-fixed-dim": "#b8c8da",
+                    "inverse-primary": "#005bc0",
+                    "surface-container": "#112036",
+                    "secondary-fixed": "#d4e4f6",
+                    "background": "#041329",
+                    "surface-dim": "#041329",
+                    "on-tertiary": "#402d00",
+                    "tertiary-fixed": "#ffdfa0",
+                    "tertiary-fixed-dim": "#fbbc00",
+                    "surface-tint": "#adc7ff",
+                    "error-container": "#93000a",
+                    "secondary-container": "#394857",
+                    "on-primary-fixed-variant": "#004493",
+                    "on-primary-container": "#167eff",
+                    "secondary": "#b8c8da",
+                    "inverse-surface": "#d6e3ff",
+                    "on-secondary": "#223240",
+                    "on-background": "#d6e3ff",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#5c4300",
+                    "outline-variant": "#44474d",
+                    "primary": "#adc7ff",
+                    "on-surface-variant": "#c5c6cd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(39, 53, 76, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .premium-gradient {
+            background: linear-gradient(135deg, #adc7ff 0%, #167eff 100%);
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#041329] border-none font-manrope font-bold tracking-tight">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-[10px] text-primary">JD</div>
+<h1 class="text-2xl font-bold text-[#adc7ff] tracking-tighter">DriveFi</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-surface-container-low rounded-full p-1">
+<button class="w-8 h-8 flex items-center justify-center text-primary" title="Switch Theme">
+<span class="material-symbols-outlined text-sm" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+<button class="text-[#adc7ff] hover:brightness-125 transition-all text-sm font-bold flex items-center gap-1">
+            EN
+<span class="material-symbols-outlined text-xs" data-icon="expand_more">expand_more</span>
+</button>
+<button class="bg-surface-container-highest px-3 py-1.5 rounded-full text-[#adc7ff] text-xs border border-white/5 hover:brightness-125 transition-all active:scale-95">
+            0x...A42B
+        </button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Search & Filter Section -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded text-[10px] font-bold font-label border border-primary/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]" data-icon="link">link</span>
+                            SECURED BY CHAINLINK PRICE FEEDS
+                        </span>
+</div>
+<h2 class="font-headline text-5xl font-extrabold tracking-tighter mb-4">
+                        Elite Fleet <span class="text-primary">Marketplace</span>
+</h2>
+<p class="text-on-surface-variant font-body text-lg max-w-lg">
+                        Acquire fractional ownership of high-performance assets with real-time valuation via decentralized oracles.
+                    </p>
+</div>
+<div class="w-full md:w-96">
+<div class="bg-surface-container-lowest p-1 rounded-xl flex items-center border-b-2 border-primary shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined px-3 text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full py-3 font-body" placeholder="Search model or performance spec..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-3 mt-10">
+<button class="px-6 py-2 rounded-full premium-gradient text-on-primary font-manrope font-bold text-sm transition-all active:scale-95 shadow-md">All Assets</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-highest text-on-surface hover:bg-surface-bright font-manrope font-semibold text-sm transition-all active:scale-95 border border-white/5">Luxury</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-highest text-on-surface hover:bg-surface-bright font-manrope font-semibold text-sm transition-all active:scale-95 border border-white/5">Electric</button>
+<button class="px-6 py-2 rounded-full bg-[#167eff]/10 text-primary hover:bg-[#167eff]/20 font-manrope font-bold text-sm transition-all active:scale-95 border border-[#167eff]/30 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="account_balance">account_balance</span>
+            Available for Financing
+        </button>
+<div class="ml-auto flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="sort">sort</span>
+<span class="font-label uppercase tracking-widest text-[10px]">Sort by: High Performance</span>
+</div>
+</div>
+</section>
+<!-- Car Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Car Card 1 -->
+<div class="glass-card rounded-xl overflow-visible group transition-all hover:translate-y-[-8px] border border-white/5">
+<div class="relative h-56 -mt-8 px-6">
+<img alt="Tesla Model S" class="w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk6hUneI_vb9EvDngKlik2xgH9QAfwEEF8kUY4Lpq_Qo-Rvd7gZNvtwJnC4uFPZrSa0bfhUd1OjkYsRYdDhzWRZVPoCwgGKZsnLQWOoYHooPjBRZW35pBZ2p8oiLVqoG2d6j7jT510pOQN3mQ84bILxhoSCG1A7EUR9EZwySXHNVUzlhgS7K5UHyl__2CI1C7kbHgI9okVE_DPTFyyZksGptgQ-1njUxkl2v6L1jnagZmO-aogUtu68hFQ-9mYzKVKmhGEGv3UW_4"/>
+</div>
+<div class="p-6 pt-0">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Electric Performance</span>
+<h3 class="font-headline text-2xl font-bold tracking-tight text-on-surface">Tesla Model S Plaid</h3>
+</div>
+<span class="bg-primary/10 text-primary px-2 py-1 rounded text-[10px] font-bold font-label border border-primary/20">TOKENIZED</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mb-6">
+<div class="bg-surface-container-low p-2 rounded-lg text-center">
+<p class="font-label text-[9px] uppercase text-outline-variant mb-1">Year</p>
+<p class="font-manrope font-bold text-sm text-secondary">2023</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-center">
+<p class="font-label text-[9px] uppercase text-outline-variant mb-1">Mileage</p>
+<p class="font-manrope font-bold text-sm text-secondary">4.2k mi</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-center">
+<p class="font-label text-[9px] uppercase text-outline-variant mb-1">VIN</p>
+<p class="font-manrope font-bold text-sm text-secondary">...889A</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="space-y-1">
+<p class="font-label text-[10px] uppercase tracking-widest text-on-tertiary-container">Installment Price</p>
+<p class="font-headline text-xl font-extrabold text-on-surface">2,450 <span class="text-xs font-medium text-outline">USDC/mo</span></p>
+<p class="font-label text-[10px] text-primary/60 font-medium">≈ R$ 12.350,00 <span class="text-[8px] opacity-70">BRL</span></p>
+</div>
+<button class="premium-gradient p-3 rounded-xl shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-on-primary block" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Car Card 2 -->
+<div class="glass-card rounded-xl overflow-visible group transition-all hover:translate-y-[-8px] border border-white/5">
+<div class="relative h-56 -mt-8 px-6">
+<img alt="BMW M4 Competition" class="w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo1Cz0HmP7wAWmA3HgrnPBMxt7Rz-lc2x5QzMgkE7rw_et5ojCqPsI5vYM7kczkdJgbtRBCuhjkthdGDymUPhfHpTFnP10FNAF_VsjpxjmMpXB4M7FVSiizTA9E_AxXaCUPcUUV-MVMcmcfWp_cUBlHP3HPyR_zXak9Y3DCPg1DdHiRwgvRzFrLmFoWCcAYp1tea9IMba05uB-UM1iv3HrLI80v8bZAogPFx-emOqARAAMqQsBRohTBi47H5VFtB9HJKzWiNiVY0w"/>
+</div>
+<div class="p-6 pt-0">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-tertiary font-bold">Premium Tier</span>
+<h3 class="font-headline text-2xl font-bold tracking-tight text-on-surface">BMW M4 Competition</h3>
+</div>
+<span class="bg-tertiary/10 text-tertiary px-2 py-1 rounded text-[10px] font-bold font-label border border-tertiary/20">PREMIUM</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mb-6">
+<div class="bg-surface-container-low p-2 rounded-lg text-center">
+<p class="font-label text-[9px] uppercase text-outline-variant mb-1">Year</p>
+<p class="font-manrope font-bold text-sm text-secondary">2024</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-center">
+<p class="font-label text-[9px] uppercase text-outline-variant mb-1">Mileage</p>
+<p class="font-manrope font-bold text-sm text-secondary">1.1k mi</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-center">
+<p class="font-label text-[9px] uppercase text-outline-variant mb-1">VIN</p>
+<p class="font-manrope font-bold text-sm text-secondary">...221C</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="space-y-1">
+<p class="font-label text-[10px] uppercase tracking-widest text-on-tertiary-container">Installment Price</p>
+<p class="font-headline text-xl font-extrabold text-on-surface">3,120 <span class="text-xs font-medium text-outline">USDC/mo</span></p>
+<p class="font-label text-[10px] text-primary/60 font-medium">≈ R$ 15.725,00 <span class="text-[8px] opacity-70">BRL</span></p>
+</div>
+<button class="premium-gradient p-3 rounded-xl shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-on-primary block" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Car Card 3 -->
+<div class="glass-card rounded-xl overflow-visible group transition-all hover:translate-y-[-8px] border border-white/5">
+<div class="relative h-56 -mt-8 px-6">
+<img alt="Porsche 911 GT3" class="w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuzdycQ0o2JxqKGN9Hg1DQe2F9n-64RaCiPhZAy2ltfqhnjUb3hHtbN1fMzt-WvqKIrX8GbP-mGbgw18zUXO7XNpGTV_XKE9FICSJ7nKx62LIdYBt8eGVKOKwk_yJQKAc7gMAlcWqz-69Xvaj7PEYgRYGtTkTqmZcP5CZH3V29HClVsWZkFh1uZhd_AHqGCaLNZbU2DPghk4oFQfLfgY_EWUrRO1Vqha9xx98WA8S9Vh3hMS3jiYdlpC0cgQbWUIf8CPj1en0Xpgo"/>
+</div>
+<div class="p-6 pt-0">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Track Ready</span>
+<h3 class="font-headline text-2xl font-bold tracking-tight text-on-surface">Porsche 911 GT3</h3>
+</div>
+<span class="bg-primary/10 text-primary px-2 py-1 rounded text-[10px] font-bold font-label border border-primary/20">TOKENIZED</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mb-6">
+<div class="bg-surface-container-low p-2 rounded-lg text-center">
+<p class="font-label text-[9px] uppercase text-outline-variant mb-1">Year</p>
+<p class="font-manrope font-bold text-sm text-secondary">2022</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-center">
+<p class="font-label text-[9px] uppercase text-outline-variant mb-1">Mileage</p>
+<p class="font-manrope font-bold text-sm text-secondary">8.5k mi</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-center">
+<p class="font-label text-[9px] uppercase text-outline-variant mb-1">VIN</p>
+<p class="font-manrope font-bold text-sm text-secondary">...454F</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="space-y-1">
+<p class="font-label text-[10px] uppercase tracking-widest text-on-tertiary-container">Installment Price</p>
+<p class="font-headline text-xl font-extrabold text-on-surface">4,800 <span class="text-xs font-medium text-outline">USDC/mo</span></p>
+<p class="font-label text-[10px] text-primary/60 font-medium">≈ R$ 24.190,00 <span class="text-[8px] opacity-70">BRL</span></p>
+</div>
+<button class="premium-gradient p-3 rounded-xl shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-on-primary block" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Special Featured Component -->
+<div class="glass-card rounded-xl overflow-visible group transition-all hover:translate-y-[-8px] lg:col-span-2 flex flex-col md:flex-row items-center p-6 gap-8 border border-white/5">
+<div class="w-full md:w-1/2">
+<img alt="Range Rover EV" class="w-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQEZHr3wCuMHpojdbcKTzcmG8iX2hzr0rZEduzabvWUwZ6GlfkkPK91wBcYjjWoXrS7beOusI2BoPWavYVGwK9Lg70bwy0G7Y6KNhhig5P7gl5H7XCSypEyTpM1btiFsZ9uMNvg2FuvNH0ReQnBu_Aw9byGZgMiNhJ1WWs8eGKfC3x4SRY1T_JHWJroipaII7-g9kdM9KU8CnpDgya9vhhyAeaUsiKI9y097P-A_Pau47UE6cH-XE0tc8Ao6mlTFcrdKHu2HDY07Y"/>
+</div>
+<div class="w-full md:w-1/2">
+<div class="mb-4">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-tertiary font-bold">New Arrival</span>
+<h3 class="font-headline text-3xl font-extrabold tracking-tighter text-on-surface">Range Rover EV</h3>
+</div>
+<p class="text-on-surface-variant text-sm font-body mb-6">Real-time asset valuation powered by Chainlink ensures your equity plan reflects current global market conditions.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="border-l-2 border-primary pl-4">
+<p class="font-label text-[10px] uppercase text-outline">Range</p>
+<p class="font-manrope font-bold text-lg">380 mi</p>
+</div>
+<div class="border-l-2 border-primary pl-4">
+<p class="font-label text-[10px] uppercase text-outline">Year</p>
+<p class="font-manrope font-bold text-lg">2024</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-white/5">
+<div class="flex flex-col space-y-1">
+<p class="font-label text-[10px] uppercase tracking-widest text-on-tertiary-container">Asset Equity Plan</p>
+<p class="font-headline text-2xl font-extrabold text-on-surface">5,920 <span class="text-xs font-medium text-outline">USDC/mo</span></p>
+<p class="font-label text-[11px] text-primary font-semibold">≈ R$ 29.836,00 <span class="text-[9px] opacity-70">BRL</span></p>
+</div>
+<button class="bg-surface-container-highest text-on-surface px-8 py-3 rounded-xl font-manrope font-bold text-sm border border-white/10 hover:brightness-125 transition-all">
+                            View Terms
+                        </button>
+</div>
+</div>
+</div>
+<!-- Chainlink Promo Component -->
+<div class="bg-gradient-to-br from-primary-container to-surface-container-highest rounded-xl p-8 flex flex-col justify-center items-center text-center border border-primary/10">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="link">link</span>
+</div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-2">Decentralized Oracles</h4>
+<p class="text-on-surface-variant text-sm font-body mb-6">DriveFi utilizes Chainlink Price Feeds to maintain transparent and accurate asset valuations across our entire fleet in real-time USDC/BRL conversions.</p>
+<button class="w-full py-3 rounded-xl bg-surface-container-highest text-primary font-manrope font-bold text-sm border border-primary/30 hover:bg-primary/10 active:scale-95 transition-all">Learn More</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-[#041329]/40 backdrop-blur-xl rounded-t-xl shadow-[0_-4px_40px_rgba(1,14,36,0.1)]">
+<div class="flex flex-col items-center justify-center text-[#b8c8da] opacity-60 hover:bg-[#adc7ff]/5 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">Dash</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#adc7ff]/10 text-[#adc7ff] rounded-xl px-3 py-1 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">Market</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#b8c8da] opacity-60 hover:bg-[#adc7ff]/5 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="currency_exchange">currency_exchange</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">DeFi</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#b8c8da] opacity-60 hover:bg-[#adc7ff]/5 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">Wallet</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#b8c8da] opacity-60 hover:bg-[#adc7ff]/5 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="toll">toll</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">Mint</span>
+</div>
+</nav>
+</body></html>

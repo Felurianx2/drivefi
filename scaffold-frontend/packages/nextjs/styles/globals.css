@@ -1,12 +1,44 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where(.dark, .dark *, [data-theme=dark], [data-theme=dark] *));
 
 @theme {
   --shadow-center: 0 0 12px -2px rgb(0 0 0 / 0.05);
   --animate-pulse-fast: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  /* DriveFi Custom Colors */
+  --color-surface: #041329;
+  --color-surface-container: #112036;
+  --color-surface-container-low: #0d1c32;
+  --color-surface-container-high: #1c2a41;
+  --color-surface-container-highest: #27354c;
+  --color-surface-bright: #2c3951;
+  --color-surface-dim: #041329;
+  --color-on-surface: #d6e3ff;
+  --color-on-surface-variant: #c5c6cd;
+  --color-primary: #adc7ff;
+  --color-on-primary: #002e68;
+  --color-primary-container: #00183c;
+  --color-on-primary-container: #167eff;
+  --color-secondary: #b8c8da;
+  --color-on-secondary: #223240;
+  --color-secondary-container: #394857;
+  --color-on-secondary-container: #a7b7c8;
+  --color-tertiary: #fbbc00;
+  --color-on-tertiary: #402d00;
+  --color-tertiary-container: #231700;
+  --color-on-tertiary-container: #a67b00;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-outline: #8f9097;
+  --color-outline-variant: #44474d;
+
+  /* Font Families */
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
 }
 
 @plugin "daisyui" {
@@ -43,25 +75,25 @@
 @plugin "daisyui/theme" {
   name: "dark";
 
-  --color-primary: #212638;
-  --color-primary-content: #f9fbff;
-  --color-secondary: #323f61;
-  --color-secondary-content: #f9fbff;
-  --color-accent: #4969a6;
-  --color-accent-content: #f9fbff;
-  --color-neutral: #f9fbff;
-  --color-neutral-content: #385183;
-  --color-base-100: #385183;
-  --color-base-200: #2a3655;
-  --color-base-300: #212638;
-  --color-base-content: #f9fbff;
-  --color-info: #385183;
+  --color-primary: #adc7ff;
+  --color-primary-content: #002e68;
+  --color-secondary: #b8c8da;
+  --color-secondary-content: #223240;
+  --color-accent: #fbbc00;
+  --color-accent-content: #402d00;
+  --color-neutral: #d6e3ff;
+  --color-neutral-content: #041329;
+  --color-base-100: #041329;
+  --color-base-200: #0d1c32;
+  --color-base-300: #112036;
+  --color-base-content: #d6e3ff;
+  --color-info: #adc7ff;
   --color-success: #34eeb6;
   --color-warning: #ffcf72;
-  --color-error: #ff8863;
+  --color-error: #ffb4ab;
 
-  --radius-field: 9999rem;
-  --radius-box: 1rem;
+  --radius-field: 0.75rem;
+  --radius-box: 0.75rem;
 
   --tt-tailw: 6px;
   --tt-bg: var(--color-primary);
@@ -90,6 +122,8 @@
 
   body {
     min-height: 100vh;
+    background: var(--color-surface);
+    color: var(--color-on-surface);
   }
 
   h1,
@@ -98,6 +132,43 @@
   h4 {
     margin-bottom: 0.5rem;
     line-height: 1;
+    font-family: var(--font-headline);
+  }
+
+  .font-headline {
+    font-family: var(--font-headline);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-label {
+    font-family: var(--font-label);
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  .glass-panel {
+    background: rgba(39, 53, 76, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glass-card {
+    background: rgba(39, 53, 76, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .premium-gradient {
+    background: linear-gradient(135deg, #adc7ff 0%, #167eff 100%);
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
 

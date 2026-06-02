@@ -1,14 +1,13 @@
 // SPDX-License-Identifier: MIT
-// Compatible with OpenZeppelin Contracts ^5.0.0
 pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract usdtTest is ERC20, ERC20Burnable, Ownable {
+contract MockUSDC is ERC20, ERC20Burnable, Ownable {
     constructor(address initialOwner, address[] memory users)
-        ERC20("USDT", "USDT")
+        ERC20("USD Coin", "USDC")
         Ownable(initialOwner)
     {
         for (uint256 i = 0; i < users.length; i++) {
@@ -18,5 +17,9 @@ contract usdtTest is ERC20, ERC20Burnable, Ownable {
 
     function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
+    }
+
+    function decimals() public pure override returns (uint8) {
+        return 6;
     }
 }

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DriveFi - Investor Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#0d1d2a",
+                        "surface-container-highest": "#27354c",
+                        "surface-container-low": "#0d1c32",
+                        "outline": "#8f9097",
+                        "tertiary": "#fbbc00",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#394857",
+                        "inverse-on-surface": "#233148",
+                        "on-secondary-container": "#a7b7c8",
+                        "surface-bright": "#2c3951",
+                        "on-tertiary-container": "#a67b00",
+                        "on-tertiary-fixed": "#261a00",
+                        "primary-container": "#00183c",
+                        "primary-fixed-dim": "#adc7ff",
+                        "surface-container-lowest": "#010e24",
+                        "on-primary": "#002e68",
+                        "surface-container-high": "#1c2a41",
+                        "primary-fixed": "#d8e2ff",
+                        "on-surface": "#d6e3ff",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#27354c",
+                        "tertiary-container": "#231700",
+                        "on-primary-fixed": "#001a41",
+                        "surface": "#041329",
+                        "secondary-fixed-dim": "#b8c8da",
+                        "inverse-primary": "#005bc0",
+                        "surface-container": "#112036",
+                        "secondary-fixed": "#d4e4f6",
+                        "background": "#041329",
+                        "surface-dim": "#041329",
+                        "on-tertiary": "#402d00",
+                        "tertiary-fixed": "#ffdfa0",
+                        "tertiary-fixed-dim": "#fbbc00",
+                        "surface-tint": "#adc7ff",
+                        "error-container": "#93000a",
+                        "secondary-container": "#394857",
+                        "on-primary-fixed-variant": "#004493",
+                        "on-primary-container": "#167eff",
+                        "secondary": "#b8c8da",
+                        "inverse-surface": "#d6e3ff",
+                        "on-secondary": "#223240",
+                        "on-background": "#d6e3ff",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "outline-variant": "#44474d",
+                        "primary": "#adc7ff",
+                        "on-surface-variant": "#c5c6cd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(39, 53, 76, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#041329] border-b border-white/5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
+<span class="material-symbols-outlined text-[#adc7ff] text-lg" data-icon="person">person</span>
+</div>
+<div class="flex flex-col">
+<h1 class="font-headline tracking-tighter font-extrabold text-2xl text-[#adc7ff]">DriveFi</h1>
+<div class="flex items-center gap-1.5">
+<span class="text-[9px] font-bold uppercase tracking-widest text-primary/80">Arbitrum Sepolia</span>
+</div>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6">
+<a class="text-[#adc7ff] font-bold font-headline text-sm hover:brightness-125 transition-all" href="#">Dashboard</a>
+<a class="text-[#b8c8da] font-headline text-sm hover:brightness-125 transition-all opacity-70" href="#">Marketplace</a>
+<a class="text-[#b8c8da] font-headline text-sm hover:brightness-125 transition-all opacity-70" href="#">DeFi</a>
+<a class="text-[#b8c8da] font-headline text-sm hover:brightness-125 transition-all opacity-70" href="#">Wallet</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<!-- Language Switcher -->
+<button class="flex items-center gap-1.5 px-2 py-1.5 rounded-lg hover:bg-white/5 transition-all text-[#b8c8da]">
+<span class="material-symbols-outlined text-xl" data-icon="language">language</span>
+<span class="font-bold text-xs uppercase">EN</span>
+</button>
+<!-- Theme Switcher -->
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/5 transition-all text-[#b8c8da]">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<button class="bg-surface-container-highest px-4 py-2 rounded-xl text-on-surface font-headline font-bold text-sm hover:brightness-125 transition-all active:scale-95 duration-100 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-400"></span>
+                0x...A4f2
+            </button>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-7xl mx-auto space-y-12">
+<!-- Welcome Greeting & Header Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="monitoring">monitoring</span>
+<span class="text-[10px] font-extrabold uppercase tracking-[0.15em]">Profile: Investor</span>
+</div>
+<p class="text-secondary font-label uppercase tracking-widest text-[10px] opacity-70">Concierge Access Verified</p>
+</div>
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tight">
+                    Welcome back / <span class="text-primary/70">Bem-vindo de volta</span>,<br/>
+<span class="text-primary">0x...A4f2</span>
+</h2>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 bg-gradient-to-br from-primary to-on-primary-container rounded-xl text-on-primary font-headline font-bold hover:brightness-110 transition-all active:scale-95">Deposit USDC</button>
+</div>
+</section>
+<!-- KPI Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Balance Card -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between min-h-[180px] border border-white/5">
+<div class="flex justify-between items-start">
+<p class="text-secondary font-label text-xs uppercase tracking-widest">Available USDC / Disponível</p>
+<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<h3 class="text-4xl font-headline font-bold text-on-surface">125,500.00</h3>
+<p class="text-primary text-sm mt-1">+12.4% from last month</p>
+</div>
+</div>
+<!-- TVL Card -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between min-h-[180px] border border-white/5">
+<div class="flex justify-between items-start">
+<p class="text-secondary font-label text-xs uppercase tracking-widest">TVL in Car NFTs / Em Ativos</p>
+<span class="material-symbols-outlined text-tertiary" data-icon="token">token</span>
+</div>
+<div>
+<h3 class="text-4xl font-headline font-bold text-on-surface">3,850,000.00</h3>
+<p class="text-secondary text-sm mt-1">Across 7 premium assets</p>
+</div>
+</div>
+<!-- Performance Chart Mini -->
+<div class="bg-surface-container-low p-8 rounded-xl relative overflow-hidden flex flex-col min-h-[180px] border border-white/5">
+<div class="z-10">
+<p class="text-secondary font-label text-xs uppercase tracking-widest">Asset Performance / Performance</p>
+<h3 class="text-2xl font-headline font-bold text-tertiary">+21.2% <span class="text-xs font-normal text-on-surface-variant">APY</span></h3>
+</div>
+<!-- Visual SVG Chart -->
+<div class="absolute bottom-0 left-0 w-full h-24 opacity-40">
+<svg class="w-full h-full preserve-3d" viewbox="0 0 400 100">
+<path d="M0,80 Q50,70 100,50 T200,60 T300,20 T400,30" fill="none" stroke="#adc7ff" stroke-width="3"></path>
+<path d="M0,80 Q50,70 100,50 T200,60 T300,20 T400,30 L400,100 L0,100 Z" fill="url(#grad1)"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#adc7ff;stop-opacity:0.2"></stop>
+<stop offset="100%" style="stop-color:#adc7ff;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+</section>
+<!-- Active Financing List -->
+<section class="space-y-8">
+<div class="flex items-center justify-between">
+<h3 class="text-2xl font-headline font-bold">Active Financing / Financiamento Ativo</h3>
+<a class="text-primary font-headline text-sm hover:underline" href="#">View All Assets</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Vehicle Card 1 -->
+<div class="glass-panel p-1 rounded-xl group border border-white/5">
+<div class="flex flex-col md:flex-row gap-6 p-6">
+<div class="w-full md:w-48 h-32 rounded-lg overflow-hidden relative">
+<img alt="Sleek black modern sports car" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCuhzl9LSEJ4fsvT-9tKn8ENQBP6mhnx1Q0XYqw-rSv-jaXjWeDhiVCIuAvIHc9SdNR0_isjDqj-6avU5Eqfm_75qkfGV72iOo5VexNXJHp3b75OXVX8oc4NHZp_c2-HHJXF2yqbqoOu_gz-sFR02ml_tAD5jyA9f08iDSSxo31aytcwj4UxWTExTeBvMqS9OKsszNx5omwW7OcDUhhmQmUYnEX1L6pChduUbWQoe8gMzXe0Oprom0Z-RmUuzAwQSTirNJnpds2Ko"/>
+<div class="absolute top-2 left-2 bg-tertiary text-on-tertiary-fixed font-label text-[10px] px-2 py-1 rounded font-bold uppercase tracking-widest">Premium Tier</div>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-xl font-headline font-bold">2024 Porsche 911 GT3</h4>
+<p class="text-on-surface-variant font-label text-xs">NFT ID: 0x82...3e1f</p>
+</div>
+<div class="text-right">
+<p class="text-secondary font-label text-xs uppercase">Due in 4 Days</p>
+<p class="text-on-surface font-bold">$2,450.00</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] font-label uppercase tracking-widest">
+<span class="text-on-surface-variant">Equity Owned: 65%</span>
+<span class="text-primary">Remaining: $84,500</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-tertiary w-[65%]"></div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 py-2 bg-surface-container-highest rounded-lg text-sm font-bold hover:brightness-125 transition-all">View Escrow</button>
+<button class="flex-1 py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg text-sm font-bold hover:bg-primary/20 transition-all">Make Payment</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Vehicle Card 2 -->
+<div class="glass-panel p-1 rounded-xl group border border-white/5">
+<div class="flex flex-col md:flex-row gap-6 p-6">
+<div class="w-full md:w-48 h-32 rounded-lg overflow-hidden relative">
+<img alt="Modern electric luxury sedan" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmABcfru0Tq_6lCUjHI6-UIjnXDgy9r6YehoE0wzE98DH7suYzGRNSEuyHDzdjpHsvfeygG1LoAR5zoYTySnFxBal3WC5RvUA6PYT2xBzNFIeCpEFVW1RA_4TX4BjLRC-1dDc1vm9YPXgofw8LGUpDRv_dtKFr2UeEaGHZ5PaeecyustrkrZ2cVYJttuMRr8zCJC5ie4uOejwSfmN6XtM1NALvOv3TxvcKH-jAHbidHDZfddvNTKIs3ae2CFJ1N7B8sSOEgNuq6ik"/>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-xl font-headline font-bold">2024 Tesla Model S Plaid</h4>
+<p class="text-on-surface-variant font-label text-xs">NFT ID: 0x4a...9c2d</p>
+</div>
+<div class="text-right">
+<p class="text-secondary font-label text-xs uppercase">Due in 12 Days</p>
+<p class="text-on-surface font-bold">$1,120.00</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] font-label uppercase tracking-widest">
+<span class="text-on-surface-variant">Equity Owned: 12%</span>
+<span class="text-primary">Remaining: $118,200</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-tertiary w-[12%]"></div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 py-2 bg-surface-container-highest rounded-lg text-sm font-bold hover:brightness-125 transition-all">View Escrow</button>
+<button class="flex-1 py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg text-sm font-bold hover:bg-primary/20 transition-all">Make Payment</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Transaction History / Secondary Data -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12">
+<div class="md:col-span-2 space-y-6">
+<h3 class="text-xl font-headline font-bold">Recent Activity / Atividade Recente</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container/50 rounded-xl border border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="payments">payments</span>
+</div>
+<div>
+<p class="font-headline font-bold text-sm">Monthly Installment - Porsche 911</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-label">Oct 12, 2023 • Tx: 0x82...a1</p>
+</div>
+</div>
+<p class="font-headline font-bold text-error">-$2,450.00</p>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container/50 rounded-xl border border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="add_card">add_card</span>
+</div>
+<div>
+<p class="font-headline font-bold text-sm">USDC Deposit</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-label">Oct 10, 2023 • Arbitrum Sepolia</p>
+</div>
+</div>
+<p class="font-headline font-bold text-primary">+$15,000.00</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-xl space-y-6 self-start border border-white/5">
+<h3 class="text-lg font-headline font-bold">Asset Breakdown / Distribuição</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-sm text-secondary">Luxury Coupe</span>
+<span class="text-sm font-bold">42%</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-secondary">Electric Sedan</span>
+<span class="text-sm font-bold">28%</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-secondary">Collectibles</span>
+<span class="text-sm font-bold">30%</span>
+</div>
+<div class="pt-4 border-t border-white/5 flex justify-center">
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-3 bg-[#041329]/40 backdrop-blur-xl rounded-t-xl shadow-[0_-4px_40px_rgba(1,14,36,0.1)]">
+<a class="flex flex-col items-center justify-center bg-[#adc7ff]/10 text-[#adc7ff] rounded-xl px-3 py-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">Dash</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b8c8da] opacity-60 hover:bg-[#adc7ff]/5 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">Market</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b8c8da] opacity-60 hover:bg-[#adc7ff]/5 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="currency_exchange">currency_exchange</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">DeFi</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b8c8da] opacity-60 hover:bg-[#adc7ff]/5 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b8c8da] opacity-60 hover:bg-[#adc7ff]/5 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="toll">toll</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">Mint</span>
+</a>
+</nav>
+</body></html>

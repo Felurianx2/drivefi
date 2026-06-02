@@ -1,0 +1,106 @@
+{
+	"nodes": [
+		{
+			"id": "a1grp",
+			"type": "group",
+			"x": 80,
+			"y": 60,
+			"width": 2840,
+			"height": 2040,
+			"color": "5",
+			"label": "Mandala 3 · Arquitetura & MVP (hexágono)"
+		},
+		{
+			"id": "a1core",
+			"type": "text",
+			"x": 1200,
+			"y": 885,
+			"width": 500,
+			"height": 290,
+			"color": "4",
+			"text": "# Núcleo\n\n**MVP** = mocks substituídos por **fluxos reais mínimos** + deploy repetível.\n\nStack: **Scaffold-ETH 2** (`nextjs` + `hardhat`).\n\nDoc: **arquitetura & entregas**."
+		},
+		{
+			"id": "a1doc",
+			"type": "file",
+			"x": 2330,
+			"y": 190,
+			"width": 420,
+			"height": 140,
+			"color": "4",
+			"file": "docs/Arquitetura-Entregas-MVP.md"
+		},
+		{
+			"id": "a1petal1",
+			"type": "text",
+			"x": 1257,
+			"y": 275,
+			"width": 385,
+			"height": 360,
+			"text": "## Pétala · Mapa do repo\n\n`scaffold-frontend/` app principal\n\n`packages/nextjs/app` rotas DriveFi\n\n`smart-contracts/`, `frontend/` — auditar duplicidade"
+		},
+		{
+			"id": "a1petal2",
+			"type": "text",
+			"x": 1772,
+			"y": 572,
+			"width": 385,
+			"height": 380,
+			"text": "## Pétala · Escopo MVP\n\nOn-chain: pool + posição LP + NFT veículo mínimo\n\nOff-chain: KYC + docs + fila mint\n\nFora: secondary, multi-pool\n\n**Critério:** 1 originação whitelist"
+		},
+		{
+			"id": "a1petal3",
+			"type": "text",
+			"x": 1772,
+			"y": 1167,
+			"width": 385,
+			"height": 370,
+			"text": "## Pétala · Milestones\n\nM0 local · M1 testnet · M2 KYC + mint on-chain\n\nM3 marketplace API · M4 piloto 1 carro\n\nM5 hardening + auditoria + runbook"
+		},
+		{
+			"id": "a1petal4",
+			"type": "text",
+			"x": 1257,
+			"y": 1465,
+			"width": 385,
+			"height": 330,
+			"text": "## Pétala · Definição de pronto\n\nAceite por rota; fonte por KPI\n\nSegurança: sem chaves no repo\n\nObservabilidade; copy legal OK"
+		},
+		{
+			"id": "a1petal5",
+			"type": "text",
+			"x": 742,
+			"y": 1167,
+			"width": 385,
+			"height": 380,
+			"text": "## Pétala · Mocks → alvo\n\n`/defi` `/marketplace` `/dashboard` `/admin` `/`\n\nIndexer: The Graph / ponder / custom\n\nVer tabela no doc `.md`"
+		},
+		{
+			"id": "a1petal6",
+			"type": "text",
+			"x": 742,
+			"y": 572,
+			"width": 385,
+			"height": 350,
+			"text": "## Pétala · Deploy\n\nLocal / testnet / staging / prod\n\nVercel env; multisig; pausa\n\nDR backups"
+		},
+		{
+			"id": "a1linkhub",
+			"type": "file",
+			"x": 2400,
+			"y": 80,
+			"width": 380,
+			"height": 120,
+			"file": "canvas/00-DriveFi-Hub-Mandalas.canvas"
+		}
+	],
+	"edges": [
+		{ "id": "a1y1", "fromNode": "a1core", "fromSide": "top", "toNode": "a1petal1", "toSide": "bottom" },
+		{ "id": "a1y2", "fromNode": "a1core", "fromSide": "right", "toNode": "a1petal2", "toSide": "left" },
+		{ "id": "a1y3", "fromNode": "a1core", "fromSide": "right", "toNode": "a1petal3", "toSide": "left" },
+		{ "id": "a1y4", "fromNode": "a1core", "fromSide": "bottom", "toNode": "a1petal4", "toSide": "top" },
+		{ "id": "a1y5", "fromNode": "a1core", "fromSide": "left", "toNode": "a1petal5", "toSide": "right" },
+		{ "id": "a1y6", "fromNode": "a1core", "fromSide": "left", "toNode": "a1petal6", "toSide": "right" },
+		{ "id": "a1y7", "fromNode": "a1core", "fromSide": "right", "toNode": "a1doc", "toSide": "left" }
+	]
+}

@@ -1,0 +1,106 @@
+{
+	"nodes": [
+		{
+			"id": "e1grp",
+			"type": "group",
+			"x": 80,
+			"y": 60,
+			"width": 2840,
+			"height": 2040,
+			"color": "3",
+			"label": "Mandala 2 · Economia & Risco (hexágono)"
+		},
+		{
+			"id": "e1core",
+			"type": "text",
+			"x": 1200,
+			"y": 885,
+			"width": 500,
+			"height": 290,
+			"color": "2",
+			"text": "# Núcleo\n\n**Sustentabilidade da pool** com premissas explícitas e **stress** documentado.\n\nCada número na UI deve ter **rastro** (planilha / contrato).\n\nDoc: **modelo de risco**."
+		},
+		{
+			"id": "e1doc",
+			"type": "file",
+			"x": 2330,
+			"y": 190,
+			"width": 420,
+			"height": 140,
+			"color": "2",
+			"file": "docs/Modelo-Risco-Pools.md"
+		},
+		{
+			"id": "e1petal1",
+			"type": "text",
+			"x": 1257,
+			"y": 275,
+			"width": 385,
+			"height": 340,
+			"text": "## Pétala · Premissas de APR\n\nGross vs net; frequência LP; fees\n\nEstimativa vs realizado\n\n*UI:* `currentAPR` hoje é **ilustrativo**"
+		},
+		{
+			"id": "e1petal2",
+			"type": "text",
+			"x": 1772,
+			"y": 572,
+			"width": 385,
+			"height": 340,
+			"text": "## Pétala · Provisão\n\n% carteira, vintage, gatilhos step-up\n\nAlocação pool vs equity\n\nReporting ao LP e auditoria"
+		},
+		{
+			"id": "e1petal3",
+			"type": "text",
+			"x": 1772,
+			"y": 1167,
+			"width": 385,
+			"height": 340,
+			"text": "## Pétala · Inadimplência\n\nDefinição default; recuperação; LGD\n\nConcentração; stress NPL 2×/3×\n\nImpacto no caixa e APR líquido"
+		},
+		{
+			"id": "e1petal4",
+			"type": "text",
+			"x": 1257,
+			"y": 1465,
+			"width": 385,
+			"height": 330,
+			"text": "## Pétala · Liquidez\n\nSaques: imediato vs fila vs janela\n\nBuffer; matching originação\n\nALM; corrida; pausa depósito/saque"
+		},
+		{
+			"id": "e1petal5",
+			"type": "text",
+			"x": 742,
+			"y": 1167,
+			"width": 385,
+			"height": 340,
+			"text": "## Pétala · Stress cases\n\nTaxa, preço usado, atraso agregado\n\nFraude garantia; incidente contrato\n\nMudança regulatória\n\n*Para cada:* alerta + ação + comunicação LP"
+		},
+		{
+			"id": "e1petal6",
+			"type": "text",
+			"x": 742,
+			"y": 572,
+			"width": 385,
+			"height": 330,
+			"text": "## Pétala · Governança de risco\n\nCadência mensal; comitê crédito\n\nLimites aprovados; modelo versionado\n\nMemorando 1 página para investidores"
+		},
+		{
+			"id": "e1linkhub",
+			"type": "file",
+			"x": 2400,
+			"y": 80,
+			"width": 380,
+			"height": 120,
+			"file": "canvas/00-DriveFi-Hub-Mandalas.canvas"
+		}
+	],
+	"edges": [
+		{ "id": "e1x1", "fromNode": "e1core", "fromSide": "top", "toNode": "e1petal1", "toSide": "bottom" },
+		{ "id": "e1x2", "fromNode": "e1core", "fromSide": "right", "toNode": "e1petal2", "toSide": "left" },
+		{ "id": "e1x3", "fromNode": "e1core", "fromSide": "right", "toNode": "e1petal3", "toSide": "left" },
+		{ "id": "e1x4", "fromNode": "e1core", "fromSide": "bottom", "toNode": "e1petal4", "toSide": "top" },
+		{ "id": "e1x5", "fromNode": "e1core", "fromSide": "left", "toNode": "e1petal5", "toSide": "right" },
+		{ "id": "e1x6", "fromNode": "e1core", "fromSide": "left", "toNode": "e1petal6", "toSide": "right" },
+		{ "id": "e1x7", "fromNode": "e1core", "fromSide": "right", "toNode": "e1doc", "toSide": "left" }
+	]
+}

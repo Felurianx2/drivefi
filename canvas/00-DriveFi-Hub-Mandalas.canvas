@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"hub0001groupmaster","type":"group","x":20,"y":20,"width":3040,"height":2140,"color":"4","label":"DriveFi · Hub (pentágono + docs)"},
+		{"id":"hub0002nucleus","type":"text","text":"# DriveFi — Mapa Mestre\n\n**DriveFi Manager** · cinco mandalas em **pentágono regular** ao redor deste núcleo.\n\n1. Produto & jornadas\n2. Economia & risco\n3. Arquitetura & MVP\n4. Comunicação\n5. **Compliance & jurídico** (nova)\n\n---\n**Texto canônico:** nó abaixo → `docs/00-INDICE-DriveFi.md`\n\n*Repo:* `scaffold-frontend` — rotas `/` `/defi` `/marketplace` `/dashboard` `/admin`","x":1250,"y":920,"width":580,"height":380,"color":"5"},
+		{"id":"hub0010fileindex","type":"file","file":"docs/00-INDICE-DriveFi.md","x":1320,"y":1320,"width":440,"height":130,"color":"2"},
+		{"id":"hub0003fileprod","type":"file","file":"canvas/01-Mandala-Produto-Jornadas.canvas","x":1340,"y":255,"width":400,"height":170},
+		{"id":"hub0004fileeco","type":"file","file":"canvas/02-Mandala-Economia-Risco.canvas","x":2063,"y":780,"width":400,"height":170},
+		{"id":"hub0005filearch","type":"file","file":"canvas/03-Mandala-Arquitetura-MVP.canvas","x":1786,"y":1630,"width":400,"height":170},
+		{"id":"hub0006filecom","type":"file","file":"canvas/04-Mandala-Comunicacao.canvas","x":894,"y":1630,"width":400,"height":170},
+		{"id":"hub0007legend","type":"text","text":"## Legenda\n\n- **Pentágono:** 5 mandalas, **72°** entre eixos (rotação a partir do topo).\n- **Hexágono** (dentro de cada `.canvas`): 6 pétalas, **60°** entre eixos.\n- Linhas = leitura sugerida.\n\nAtualize números e claims apenas com **fonte** (contrato, planilha, counsel).","x":40,"y":960,"width":520,"height":240},
+		{"id":"hub0008state","type":"text","text":"## Estado do app (abril/2026)\n\n- **`/defi`** — mock + `TODO` contrato\n- **`/marketplace`** — mock (array)\n- **`/dashboard`** — mock + *under construction*\n- **`/admin`** — mint `TODO` + endereço placeholder\n- **`/`** — stats marketing mock\n\n**Meta:** cada KPI público ligado a fonte real ou rótulo *demo* explícito.","x":2480,"y":960,"width":540,"height":260},
+		{"id":"hub0009filecomp","type":"file","file":"canvas/05-Mandala-Compliance-Juridico.canvas","x":660,"y":750,"width":400,"height":170}
+	],
+	"edges":[
+		{"id":"e_hub_01","fromNode":"hub0002nucleus","fromSide":"top","toNode":"hub0003fileprod","toSide":"bottom"},
+		{"id":"e_hub_02","fromNode":"hub0002nucleus","fromSide":"right","toNode":"hub0004fileeco","toSide":"left"},
+		{"id":"e_hub_03","fromNode":"hub0002nucleus","fromSide":"bottom","toNode":"hub0005filearch","toSide":"top"},
+		{"id":"e_hub_04","fromNode":"hub0002nucleus","fromSide":"bottom","toNode":"hub0006filecom","toSide":"top"},
+		{"id":"e_hub_05","fromNode":"hub0002nucleus","fromSide":"left","toNode":"hub0009filecomp","toSide":"right"},
+		{"id":"e_hub_06","fromNode":"hub0002nucleus","fromSide":"bottom","toNode":"hub0010fileindex","toSide":"top"}
+	]
+}

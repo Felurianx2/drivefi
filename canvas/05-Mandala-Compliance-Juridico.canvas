@@ -1,0 +1,106 @@
+{
+	"nodes": [
+		{
+			"id": "l1grp",
+			"type": "group",
+			"x": 80,
+			"y": 60,
+			"width": 2840,
+			"height": 2040,
+			"color": "#157151",
+			"label": "Mandala 5 · Compliance & Jurídico (hexágono)"
+		},
+		{
+			"id": "l1core",
+			"type": "text",
+			"x": 1200,
+			"y": 885,
+			"width": 500,
+			"height": 300,
+			"color": "2",
+			"text": "# Núcleo\n\n**Conformidade** e **quadro jurídico** que sustentam pool, mutuário e tokens — sem adivinhar classificação regulatória.\n\nDoc canônico: checklist **Compliance-Juridico** (não é parecer legal)."
+		},
+		{
+			"id": "l1doc",
+			"type": "file",
+			"x": 2330,
+			"y": 190,
+			"width": 420,
+			"height": 140,
+			"color": "2",
+			"file": "docs/Compliance-Juridico.md"
+		},
+		{
+			"id": "l1petal1",
+			"type": "text",
+			"x": 1257,
+			"y": 275,
+			"width": 385,
+			"height": 340,
+			"text": "## Pétala · Estrutura & contratos\n\nEntidade operadora; jurisdição\n\nQuem é credor; fluxo LP ↔ mutuário ↔ veículo\n\nPacote: adesão pool, financiamento, garantias"
+		},
+		{
+			"id": "l1petal2",
+			"type": "text",
+			"x": 1772,
+			"y": 572,
+			"width": 385,
+			"height": 360,
+			"text": "## Pétala · AML / CFT / KYC\n\nProvedor; níveis por persona\n\nMonitoramento; evidências\n\nPLD interno; treinamento"
+		},
+		{
+			"id": "l1petal3",
+			"type": "text",
+			"x": 1772,
+			"y": 1167,
+			"width": 385,
+			"height": 360,
+			"text": "## Pétala · LGPD & dados\n\nBases legais; consentimento quando preciso\n\nDPAs; retenção/exclusão\n\nTransferência internacional de dados"
+		},
+		{
+			"id": "l1petal4",
+			"type": "text",
+			"x": 1257,
+			"y": 1465,
+			"width": 385,
+			"height": 340,
+			"text": "## Pétala · Tokens & oferta\n\nClassificação (utilidade vs direito vs security?) — **counsel**\n\nMarketing de APR; restrições geográficas\n\nTerms of use / risk disclosures"
+		},
+		{
+			"id": "l1petal5",
+			"type": "text",
+			"x": 742,
+			"y": 1167,
+			"width": 385,
+			"height": 360,
+			"text": "## Pétala · Garantia real & registro\n\nGravame / DETRAN vs representação on-chain\n\nRecuperação; leilão; conflito com mutuário\n\nSeguros obrigatórios?"
+		},
+		{
+			"id": "l1petal6",
+			"type": "text",
+			"x": 742,
+			"y": 572,
+			"width": 385,
+			"height": 340,
+			"text": "## Pétala · Incidentes & continuidade\n\nData breach playbook\n\nPausa de contrato; comunicação\n\nForça maior; disputas cross-border"
+		},
+		{
+			"id": "l1linkhub",
+			"type": "file",
+			"x": 2400,
+			"y": 80,
+			"width": 380,
+			"height": 120,
+			"file": "canvas/00-DriveFi-Hub-Mandalas.canvas"
+		}
+	],
+	"edges": [
+		{ "id": "l1e1", "fromNode": "l1core", "fromSide": "top", "toNode": "l1petal1", "toSide": "bottom" },
+		{ "id": "l1e2", "fromNode": "l1core", "fromSide": "right", "toNode": "l1petal2", "toSide": "left" },
+		{ "id": "l1e3", "fromNode": "l1core", "fromSide": "right", "toNode": "l1petal3", "toSide": "left" },
+		{ "id": "l1e4", "fromNode": "l1core", "fromSide": "bottom", "toNode": "l1petal4", "toSide": "top" },
+		{ "id": "l1e5", "fromNode": "l1core", "fromSide": "left", "toNode": "l1petal5", "toSide": "right" },
+		{ "id": "l1e6", "fromNode": "l1core", "fromSide": "left", "toNode": "l1petal6", "toSide": "right" },
+		{ "id": "l1e7", "fromNode": "l1core", "fromSide": "right", "toNode": "l1doc", "toSide": "left" }
+	]
+}

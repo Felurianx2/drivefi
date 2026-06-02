@@ -1,0 +1,106 @@
+{
+	"nodes": [
+		{
+			"id": "p1grp",
+			"type": "group",
+			"x": 80,
+			"y": 60,
+			"width": 2840,
+			"height": 2040,
+			"color": "1",
+			"label": "Mandala 1 · Produto & Jornadas (hexágono)"
+		},
+		{
+			"id": "p1core",
+			"type": "text",
+			"x": 1200,
+			"y": 885,
+			"width": 500,
+			"height": 290,
+			"color": "2",
+			"text": "# Núcleo\n\n**Experiências claras** para **LP** e **mutuário**, com **KYC** e **painéis** alinhados a dados reais.\n\nPétalas em **hexágono regular** (60°). Doc: **PRD**."
+		},
+		{
+			"id": "p1doc",
+			"type": "file",
+			"x": 2330,
+			"y": 190,
+			"width": 420,
+			"height": 140,
+			"color": "2",
+			"file": "docs/PRD-MVP-DriveFi.md"
+		},
+		{
+			"id": "p1petal1",
+			"type": "text",
+			"x": 1257,
+			"y": 275,
+			"width": 385,
+			"height": 320,
+			"text": "## Pétala · Investidor (LP / DeFi)\n\n**Descoberta** → wallet → **APR**, TVL, risco\n\n**Aplicar** → depósito stable → posição\n\n**Acompanhar** → rendimento, histórico, saques\n\n**Integrar** (`/defi` mock): substituir `totalLiquidity`, `currentAPR`, `handleStake`\n\n**Compliance:** suitability, tiers, avisos"
+		},
+		{
+			"id": "p1petal2",
+			"type": "text",
+			"x": 1772,
+			"y": 572,
+			"width": 385,
+			"height": 330,
+			"text": "## Pétala · Mutuário (parcelado)\n\nExplorar → simular → elegibilidade → contratar → pagar\n\n**Integrar** (`/marketplace` mock): sair do array TS\n\n**Pós-venda:** posse, registro, seguro (escopo MVP)"
+		},
+		{
+			"id": "p1petal3",
+			"type": "text",
+			"x": 1772,
+			"y": 1167,
+			"width": 385,
+			"height": 330,
+			"text": "## Pétala · KYC / AML\n\nIdentidade, listas, níveis LP/mutuário/dealer\n\nLimites por tier; trilha de auditoria\n\nCongelamento / off-boarding\n\n*MVP:* 1 provedor + estados API"
+		},
+		{
+			"id": "p1petal4",
+			"type": "text",
+			"x": 1257,
+			"y": 1465,
+			"width": 385,
+			"height": 320,
+			"text": "## Pétala · Onboarding\n\nWallet + termos + educação mínima\n\nPrimeira ação guiada (depósito ou simulação)\n\nSuporte / SLA\n\n*Evitar:* APR “garantido” sem base legal e modelo"
+		},
+		{
+			"id": "p1petal5",
+			"type": "text",
+			"x": 742,
+			"y": 1167,
+			"width": 385,
+			"height": 330,
+			"text": "## Pétala · Painéis\n\nInvestidor / mutuário / risco / admin\n\n**Hoje:** `/dashboard` *construction*; `/admin` mint TODO\n\n**Meta:** 1 view operacional confiável no piloto"
+		},
+		{
+			"id": "p1petal6",
+			"type": "text",
+			"x": 742,
+			"y": 572,
+			"width": 385,
+			"height": 320,
+			"text": "## Pétala · Mock → real\n\nFonte única: eventos + DB operacional\n\nMapear KPI ↔ métrica\n\nFeature flags demo/prod\n\nChecklist: sem placeholder em copy pública"
+		},
+		{
+			"id": "p1linkhub",
+			"type": "file",
+			"x": 2400,
+			"y": 80,
+			"width": 380,
+			"height": 120,
+			"file": "canvas/00-DriveFi-Hub-Mandalas.canvas"
+		}
+	],
+	"edges": [
+		{ "id": "p1e1", "fromNode": "p1core", "fromSide": "top", "toNode": "p1petal1", "toSide": "bottom" },
+		{ "id": "p1e2", "fromNode": "p1core", "fromSide": "right", "toNode": "p1petal2", "toSide": "left" },
+		{ "id": "p1e3", "fromNode": "p1core", "fromSide": "right", "toNode": "p1petal3", "toSide": "left" },
+		{ "id": "p1e4", "fromNode": "p1core", "fromSide": "bottom", "toNode": "p1petal4", "toSide": "top" },
+		{ "id": "p1e5", "fromNode": "p1core", "fromSide": "left", "toNode": "p1petal5", "toSide": "right" },
+		{ "id": "p1e6", "fromNode": "p1core", "fromSide": "left", "toNode": "p1petal6", "toSide": "right" },
+		{ "id": "p1e7", "fromNode": "p1core", "fromSide": "right", "toNode": "p1doc", "toSide": "left" }
+	]
+}
