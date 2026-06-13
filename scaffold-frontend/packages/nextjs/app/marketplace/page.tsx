@@ -100,7 +100,7 @@ export default function MarketplacePage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#041329] text-on-surface font-body">
+    <div className="min-h-screen bg-surface text-on-surface font-body transition-colors duration-300">
       <Header />
       <main className="pt-24 pb-32 px-6 max-w-7xl mx-auto">
         {/* Hero Section */}
@@ -122,7 +122,7 @@ export default function MarketplacePage() {
 
             {/* Search Bar */}
             <div className="w-full md:w-96">
-              <div className="bg-surface-container-lowest p-1 rounded-xl flex items-center border-b-2 border-primary shadow-lg shadow-primary/10">
+              <div className="bg-surface-container-lowest p-1 rounded-xl flex items-center border border-primary/40 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/20 shadow-lg shadow-primary/10 transition-all">
                 <span className="material-symbols-outlined px-3 text-outline">search</span>
                 <input
                   className="bg-transparent border-none focus:ring-0 text-on-surface w-full py-3 font-body placeholder:text-outline"
@@ -144,13 +144,13 @@ export default function MarketplacePage() {
                 className={`px-6 py-2 rounded-full font-manrope font-bold text-sm transition-all active:scale-95 ${
                   activeFilter === filter.id
                     ? "premium-gradient text-on-primary shadow-md"
-                    : "bg-surface-container-highest text-on-surface hover:bg-surface-bright border border-white/5"
+                    : "bg-surface-container-highest text-on-surface hover:bg-surface-bright border border-on-surface/5"
                 }`}
               >
                 {filter.label}
               </button>
             ))}
-            <button className="px-6 py-2 rounded-full bg-[#167eff]/10 text-primary hover:bg-[#167eff]/20 font-manrope font-bold text-sm transition-all active:scale-95 border border-[#167eff]/30 flex items-center gap-2">
+            <button className="px-6 py-2 rounded-full bg-primary/10 text-primary hover:bg-primary/20 font-manrope font-bold text-sm transition-all active:scale-95 border border-primary/30 flex items-center gap-2">
               <span className="material-symbols-outlined text-sm">account_balance</span>
               {t("marketplace.financing")}
             </button>
@@ -168,7 +168,7 @@ export default function MarketplacePage() {
             return (
               <div
                 key={car.id}
-                className="glass-card rounded-xl overflow-visible group transition-all hover:translate-y-[-8px] border border-white/5"
+                className="glass-card rounded-xl overflow-visible group transition-all hover:translate-y-[-8px] border border-on-surface/5"
                 onMouseEnter={() => setHoveredCar(car.id)}
                 onMouseLeave={() => setHoveredCar(null)}
               >
@@ -206,18 +206,16 @@ export default function MarketplacePage() {
                       <p className="font-manrope font-bold text-sm text-secondary">{car.year}</p>
                     </div>
                     <div className="bg-surface-container-low p-2 rounded-lg text-center">
-                      <p className="font-label text-[9px] uppercase text-outline-variant mb-1">
-                        {t("vehicle.mileage")}
-                      </p>
+                      <p className="font-label text-[9px] uppercase text-outline-variant mb-1">{t("vehicle.mileage")}</p>
                       <p className="font-manrope font-bold text-sm text-secondary">{car.mileage}</p>
                     </div>
                     <div className="bg-surface-container-low p-2 rounded-lg text-center">
                       <p className="font-label text-[9px] uppercase text-outline-variant mb-1">{t("vehicle.vin")}</p>
-                      <p className="font-manrope font-bold text-sm text-secondary">{car.vin}</p>
+                      <p className="font-manrope font-bold text-sm text-secondary truncate">{car.vin}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                  <div className="flex items-center justify-between pt-4 border-t border-on-surface/5">
                     <div className="space-y-1">
                       <p className="font-label text-[10px] uppercase tracking-widest text-on-tertiary-container">
                         {t("marketplace.installmentPrice")}

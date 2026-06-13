@@ -41,7 +41,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#041329] via-[#0d1c32] to-[#041329] text-on-surface font-body">
+    <div className="min-h-screen bg-gradient-to-br from-surface via-surface-container-low to-surface text-on-surface font-body transition-colors duration-300">
       <Header />
 
       {/* Hero Section */}
@@ -54,7 +54,7 @@ export default function HomePage() {
 
           <h1 className="text-6xl md:text-7xl font-headline font-extrabold tracking-tight mb-6">
             {language === "en" ? "Tokenized " : "Financiamento "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-primary">
+            <span className="text-primary">
               {language === "en" ? "Vehicle" : "Veicular"}
             </span>
             <br />
@@ -70,13 +70,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/marketplace"
-              className="px-8 py-4 rounded-xl bg-gradient-to-br from-primary to-on-primary-container text-on-primary font-headline font-bold text-lg hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-primary/20"
+              className="px-8 py-4 rounded-xl premium-gradient text-on-primary font-headline font-bold text-lg hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-primary/20"
             >
               {language === "en" ? "Explore Marketplace" : "Explorar Marketplace"}
             </Link>
             <Link
               href="/defi"
-              className="px-8 py-4 rounded-xl bg-surface-container-highest text-on-surface font-headline font-bold text-lg hover:brightness-125 transition-all border border-white/10"
+              className="px-8 py-4 rounded-xl bg-surface-container-highest text-on-surface font-headline font-bold text-lg hover:brightness-110 transition-all border border-on-surface/10"
             >
               {language === "en" ? "Earn Yield" : "Ganhar Rendimento"}
             </Link>
@@ -86,7 +86,7 @@ export default function HomePage() {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
           {stats.map((stat, idx) => (
-            <div key={idx} className="glass-panel p-6 rounded-xl border border-white/5 text-center">
+            <div key={idx} className="glass-panel p-6 rounded-xl border border-on-surface/5 text-center">
               <h3 className="text-4xl font-headline font-extrabold text-primary mb-2">{stat.value}</h3>
               <p className="text-secondary font-label uppercase tracking-widest text-xs">{stat.label}</p>
             </div>
@@ -112,7 +112,7 @@ export default function HomePage() {
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="glass-panel p-8 rounded-xl border border-white/5 hover:translate-y-[-8px] transition-all group"
+              className="glass-panel p-8 rounded-xl border border-on-surface/5 hover:translate-y-[-8px] transition-all group"
             >
               <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-all">
                 <span className="material-symbols-outlined text-4xl text-primary">{feature.icon}</span>
@@ -137,7 +137,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/marketplace"
-            className="inline-block px-8 py-4 rounded-xl bg-gradient-to-br from-primary to-on-primary-container text-on-primary font-headline font-bold text-lg hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-primary/20"
+            className="inline-block px-8 py-4 rounded-xl premium-gradient text-on-primary font-headline font-bold text-lg hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-primary/20"
           >
             {language === "en" ? "Launch App" : "Acessar App"}
           </Link>
@@ -145,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-white/5">
+      <footer className="py-12 px-6 border-t border-on-surface/5">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="material-symbols-outlined text-primary">directions_car</span>
