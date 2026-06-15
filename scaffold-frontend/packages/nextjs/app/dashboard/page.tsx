@@ -30,14 +30,14 @@ export default function DashboardPage() {
           </h2>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between min-h-[180px] border border-on-surface/5">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12" aria-label="Portfolio overview">
+          <div className="md:col-span-2 bg-surface-container-low p-8 rounded-xl flex flex-col justify-between min-h-[180px] border border-on-surface/5">
             <div className="flex justify-between items-start">
               <p className="text-secondary font-label text-xs uppercase tracking-widest">{t("dashboard.availableUSDC")}</p>
-              <span className="material-symbols-outlined text-primary">account_balance_wallet</span>
+              <span className="material-symbols-outlined text-primary" aria-hidden="true">account_balance_wallet</span>
             </div>
             <div>
-              <h3 className="text-4xl font-headline font-bold text-on-surface">{availableUSDC.toLocaleString("en-US")}</h3>
+              <h3 className="text-5xl font-headline font-bold text-on-surface">{availableUSDC.toLocaleString("en-US")} <span className="text-base font-normal text-secondary">USDC</span></h3>
               <p className="text-primary text-sm mt-1">+12.4% from last month</p>
             </div>
           </div>
@@ -45,7 +45,7 @@ export default function DashboardPage() {
           <div className="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between min-h-[180px] border border-on-surface/5">
             <div className="flex justify-between items-start">
               <p className="text-secondary font-label text-xs uppercase tracking-widest">{t("dashboard.tvlInAssets")}</p>
-              <span className="material-symbols-outlined text-tertiary">token</span>
+              <span className="material-symbols-outlined text-tertiary" aria-hidden="true">token</span>
             </div>
             <div>
               <h3 className="text-4xl font-headline font-bold text-on-surface">{tvlInAssets.toLocaleString("en-US")}</h3>

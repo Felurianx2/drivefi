@@ -48,11 +48,11 @@ export default function HomePage() {
       <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold font-label border border-primary/20 mb-6">
-            <span className="material-symbols-outlined text-sm">verified</span>
-            {language === "en" ? "POWERED BY ARBITRUM & CHAINLINK" : "POWERED BY ARBITRUM & CHAINLINK"}
+            <span className="material-symbols-outlined text-sm" aria-hidden="true">verified</span>
+            {language === "en" ? "Powered by Arbitrum & Chainlink" : "Powered by Arbitrum & Chainlink"}
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-headline font-extrabold tracking-tight mb-6">
+          <h1 className="text-5xl md:text-7xl font-headline font-extrabold tracking-tight mb-6">
             {language === "en" ? "Tokenized " : "Financiamento "}
             <span className="text-primary">
               {language === "en" ? "Vehicle" : "Veicular"}
@@ -70,61 +70,67 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/marketplace"
-              className="px-8 py-4 rounded-xl premium-gradient text-on-primary font-headline font-bold text-lg hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-primary/20"
+              className="px-8 py-4 rounded-xl premium-gradient text-on-primary font-headline font-bold text-lg hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               {language === "en" ? "Explore Marketplace" : "Explorar Marketplace"}
             </Link>
             <Link
               href="/defi"
-              className="px-8 py-4 rounded-xl bg-surface-container-highest text-on-surface font-headline font-bold text-lg hover:brightness-110 transition-all border border-on-surface/10"
+              className="px-8 py-4 rounded-xl bg-surface-container-highest text-on-surface font-headline font-bold text-lg hover:brightness-110 transition-all border border-on-surface/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               {language === "en" ? "Earn Yield" : "Ganhar Rendimento"}
             </Link>
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+        {/* Stats — 3 different sizes for rhythm */}
+        <div className="grid grid-cols-3 gap-4 mt-20 max-w-2xl mx-auto">
           {stats.map((stat, idx) => (
-            <div key={idx} className="glass-panel p-6 rounded-xl border border-on-surface/5 text-center">
-              <h3 className="text-4xl font-headline font-extrabold text-primary mb-2">{stat.value}</h3>
-              <p className="text-secondary font-label uppercase tracking-widest text-xs">{stat.label}</p>
+            <div
+              key={idx}
+              className={`bg-surface-container-low rounded-xl border border-on-surface/5 text-center ${idx === 0 ? "col-span-3 sm:col-span-1 py-8 px-6" : "py-6 px-4"}`}
+            >
+              <h3 className={`font-headline font-extrabold text-primary mb-1 ${idx === 0 ? "text-4xl" : "text-3xl"}`}>{stat.value}</h3>
+              <p className="text-secondary font-label uppercase tracking-widest text-[10px]">{stat.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Features */}
+      {/* Features — alternating layout instead of identical card grid */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="mb-16 max-w-xl">
           <h2 className="text-4xl md:text-5xl font-headline font-extrabold tracking-tight mb-4">
             {language === "en" ? "How It " : "Como "}
             <span className="text-primary">{language === "en" ? "Works" : "Funciona"}</span>
           </h2>
-          <p className="text-lg text-on-surface-variant max-w-2xl mx-auto">
+          <p className="text-lg text-on-surface-variant">
             {language === "en"
               ? "Three ways to participate in the tokenized vehicle economy"
               : "Três formas de participar da economia de veículos tokenizados"}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="space-y-6">
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="glass-panel p-8 rounded-xl border border-on-surface/5 hover:translate-y-[-8px] transition-all group"
+              className={`flex flex-col ${idx % 2 === 1 ? "sm:flex-row-reverse" : "sm:flex-row"} gap-6 items-center bg-surface-container-low rounded-2xl border border-on-surface/5 p-8 hover:border-primary/20 transition-all`}
             >
-              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-all">
-                <span className="material-symbols-outlined text-4xl text-primary">{feature.icon}</span>
+              <div className="w-16 h-16 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center">
+                <span className="material-symbols-outlined text-4xl text-primary" aria-hidden="true">{feature.icon}</span>
               </div>
-              <h3 className="text-2xl font-headline font-bold mb-4">{feature.title}</h3>
-              <p className="text-on-surface-variant">{feature.description}</p>
+              <div className="flex-1">
+                <p className="text-primary font-label font-bold text-xs mb-1">0{idx + 1}</p>
+                <h3 className="text-2xl font-headline font-bold mb-2">{feature.title}</h3>
+                <p className="text-on-surface-variant">{feature.description}</p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section — purposeful glass here */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <div className="glass-panel p-12 rounded-2xl border border-primary/20 text-center">
           <h2 className="text-4xl md:text-5xl font-headline font-extrabold tracking-tight mb-6">
@@ -137,7 +143,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/marketplace"
-            className="inline-block px-8 py-4 rounded-xl premium-gradient text-on-primary font-headline font-bold text-lg hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-primary/20"
+            className="inline-block px-8 py-4 rounded-xl premium-gradient text-on-primary font-headline font-bold text-lg hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             {language === "en" ? "Launch App" : "Acessar App"}
           </Link>
@@ -148,7 +154,7 @@ export default function HomePage() {
       <footer className="py-12 px-6 border-t border-on-surface/5">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="material-symbols-outlined text-primary">directions_car</span>
+            <span className="material-symbols-outlined text-primary" aria-hidden="true">directions_car</span>
             <h3 className="font-headline text-2xl font-bold text-primary">DriveFi</h3>
           </div>
           <p className="text-sm text-secondary mb-4">

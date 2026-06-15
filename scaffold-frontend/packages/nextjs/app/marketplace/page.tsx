@@ -168,7 +168,7 @@ export default function MarketplacePage() {
             return (
               <div
                 key={car.id}
-                className="glass-card rounded-xl overflow-visible group transition-all hover:translate-y-[-8px] border border-on-surface/5"
+                className="bg-surface-container-low rounded-xl overflow-visible group transition-all hover:translate-y-[-8px] border border-on-surface/5"
                 onMouseEnter={() => setHoveredCar(car.id)}
                 onMouseLeave={() => setHoveredCar(null)}
               >
@@ -202,15 +202,15 @@ export default function MarketplacePage() {
 
                   <div className="grid grid-cols-3 gap-2 mb-6">
                     <div className="bg-surface-container-low p-2 rounded-lg text-center">
-                      <p className="font-label text-[9px] uppercase text-outline-variant mb-1">{t("vehicle.year")}</p>
+                      <p className="font-label text-[10px] uppercase text-outline-variant mb-1">{t("vehicle.year")}</p>
                       <p className="font-manrope font-bold text-sm text-secondary">{car.year}</p>
                     </div>
                     <div className="bg-surface-container-low p-2 rounded-lg text-center">
-                      <p className="font-label text-[9px] uppercase text-outline-variant mb-1">{t("vehicle.mileage")}</p>
+                      <p className="font-label text-[10px] uppercase text-outline-variant mb-1">{t("vehicle.mileage")}</p>
                       <p className="font-manrope font-bold text-sm text-secondary">{car.mileage}</p>
                     </div>
                     <div className="bg-surface-container-low p-2 rounded-lg text-center">
-                      <p className="font-label text-[9px] uppercase text-outline-variant mb-1">{t("vehicle.vin")}</p>
+                      <p className="font-label text-[10px] uppercase text-outline-variant mb-1">{t("vehicle.vin")}</p>
                       <p className="font-manrope font-bold text-sm text-secondary truncate">{car.vin}</p>
                     </div>
                   </div>
@@ -225,7 +225,7 @@ export default function MarketplacePage() {
                         <span className="text-xs font-medium text-outline">{t("marketplace.perMonth")}</span>
                       </p>
                     </div>
-                    <button className="premium-gradient p-3 rounded-xl shadow-lg active:scale-90 transition-transform">
+                    <button aria-label={`Ver detalhes de ${car.name}`} className="premium-gradient p-3 rounded-xl shadow-lg active:scale-90 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-on-primary">
                       <span className="material-symbols-outlined text-on-primary block">arrow_forward</span>
                     </button>
                   </div>

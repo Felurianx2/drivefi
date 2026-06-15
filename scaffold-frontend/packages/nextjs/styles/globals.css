@@ -34,11 +34,14 @@
   --color-on-error-container: #ffdad6;
   --color-outline: #8f9097;
   --color-outline-variant: #44474d;
+  --color-surface-container-lowest: #020d1e;
+  --color-success: #34eeb6;
+  --color-on-success: #00382a;
 
-  /* Font Families */
-  --font-headline: "Manrope", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-label: "Inter", sans-serif;
+  /* Font Families — next/font provides --font-manrope and --font-inter on <html> */
+  --font-headline: var(--font-manrope, "Manrope", sans-serif);
+  --font-body: var(--font-inter, "Inter", sans-serif);
+  --font-label: var(--font-inter, "Inter", sans-serif);
 }
 
 /* ─── Light-mode overrides ─── */
@@ -67,6 +70,8 @@ html:not(.dark) {
   --color-on-tertiary-container: #92400e;
   --color-outline: #6b7280;
   --color-outline-variant: #9ca3af;
+  --color-success: #059669;
+  --color-on-success: #ffffff;
 }
 
 @plugin "daisyui" {
@@ -151,6 +156,12 @@ looks the same as it did with Tailwind CSS v3.
     color: var(--color-on-surface);
   }
 
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
   h1,
   h2,
   h3,
@@ -180,22 +191,22 @@ looks the same as it did with Tailwind CSS v3.
   /* Dark-mode glass */
   .glass-panel {
     background: rgba(39, 53, 76, 0.4);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .glass-card {
     background: rgba(39, 53, 76, 0.4);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   /* Light-mode glass overrides */
   html:not(.dark) .glass-panel,
   html:not(.dark) .glass-card {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   /* Light-mode: white borders become subtle dark borders */

@@ -50,7 +50,7 @@ export default function AdminPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-8">
             {/* Step 01 */}
-            <section className="glass-panel p-6 rounded-xl border border-on-surface/5">
+            <section className="bg-surface-container-low p-6 rounded-xl border border-on-surface/5">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">01</div>
                 <h2 className="text-xl font-headline font-bold">{t("admin.assetIdentity")}</h2>
@@ -58,47 +58,47 @@ export default function AdminPage() {
               </div>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.vehicleId")}</label>
-                  <input type="text" name="vin" value={formData.vin} onChange={handleInputChange} placeholder="17-digit Alpha-Numeric" className={inputClass + " font-mono"} />
+                  <label htmlFor="vin" className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.vehicleId")}</label>
+                  <input id="vin" type="text" id="vin" name="vin" value={formData.vin} onChange={handleInputChange} placeholder="17-digit Alpha-Numeric" className={inputClass + " font-mono"} />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.productionYear")}</label>
-                    <input type="text" name="productionYear" value={formData.productionYear} onChange={handleInputChange} placeholder="YYYY" className={inputClass} />
+                    <label htmlFor="productionYear" className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.productionYear")}</label>
+                    <input id="productionYear" type="text" id="productionYear" name="productionYear" value={formData.productionYear} onChange={handleInputChange} placeholder="YYYY" className={inputClass} />
                   </div>
                   <div>
-                    <label className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.renavam")}</label>
-                    <input type="text" name="renavam" value={formData.renavam} onChange={handleInputChange} placeholder="Enter Registration Number" className={inputClass} />
+                    <label htmlFor="renavam" className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.renavam")}</label>
+                    <input id="renavam" type="text" id="renavam" name="renavam" value={formData.renavam} onChange={handleInputChange} placeholder="Enter Registration Number" className={inputClass} />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.make")}</label>
-                  <input type="text" name="make" value={formData.make} onChange={handleInputChange} placeholder="e.g. Porsche" className={inputClass} />
+                  <label htmlFor="make" className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.make")}</label>
+                  <input id="make" type="text" id="make" name="make" value={formData.make} onChange={handleInputChange} placeholder="e.g. Porsche" className={inputClass} />
                 </div>
                 <div>
-                  <label className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.model")}</label>
-                  <input type="text" name="model" value={formData.model} onChange={handleInputChange} placeholder="e.g. 911 GT3 RS" className={inputClass} />
+                  <label htmlFor="model" className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.model")}</label>
+                  <input id="model" type="text" id="model" name="model" value={formData.model} onChange={handleInputChange} placeholder="e.g. 911 GT3 RS" className={inputClass} />
                 </div>
               </div>
             </section>
 
             {/* Step 02 */}
-            <section className="glass-panel p-6 rounded-xl border border-on-surface/5">
+            <section className="bg-surface-container-low p-6 rounded-xl border border-on-surface/5">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">02</div>
                 <h2 className="text-xl font-headline font-bold">{t("admin.verifiedTelemetry")}</h2>
               </div>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.mileageKm")}</label>
+                  <label htmlFor="mileage" className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.mileageKm")}</label>
                   <div className="relative">
-                    <input type="text" name="mileage" value={formData.mileage} onChange={handleInputChange} placeholder="0.00" className={inputClass + " pr-28"} />
+                    <input id="mileage" type="text" id="mileage" name="mileage" value={formData.mileage} onChange={handleInputChange} placeholder="0.00" className={inputClass + " pr-28"} />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-secondary text-sm">ODO SYNCED</span>
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.serviceHistory")}</label>
-                  <select name="serviceHistory" value={formData.serviceHistory} onChange={handleInputChange} className={inputClass}>
+                  <label htmlFor="serviceHistory" className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.serviceHistory")}</label>
+                  <select id="serviceHistory" name="serviceHistory" value={formData.serviceHistory} onChange={handleInputChange} className={inputClass}>
                     <option>Full Dealer History</option>
                     <option>Partial History</option>
                     <option>No History Available</option>
@@ -108,7 +108,7 @@ export default function AdminPage() {
             </section>
 
             {/* Step 03 */}
-            <section className="glass-panel p-6 rounded-xl border border-on-surface/5">
+            <section className="bg-surface-container-low p-6 rounded-xl border border-on-surface/5">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">03</div>
                 <h2 className="text-xl font-headline font-bold">{t("admin.setUpEscrow")}</h2>
@@ -116,12 +116,12 @@ export default function AdminPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.escrowDuration")}</label>
-                    <input type="text" name="escrowDuration" value={formData.escrowDuration} onChange={handleInputChange} placeholder="30" className={inputClass} />
+                    <label htmlFor="escrowDuration" className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.escrowDuration")}</label>
+                    <input id="escrowDuration" type="text" id="escrowDuration" name="escrowDuration" value={formData.escrowDuration} onChange={handleInputChange} placeholder="30" className={inputClass} />
                   </div>
                   <div>
-                    <label className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.commissionFee")}</label>
-                    <input type="text" name="commissionFee" value={formData.commissionFee} onChange={handleInputChange} placeholder="2.5" className={inputClass} />
+                    <label htmlFor="commissionFee" className="block text-xs font-label uppercase tracking-widest text-secondary mb-2">{t("admin.commissionFee")}</label>
+                    <input id="commissionFee" type="text" id="commissionFee" name="commissionFee" value={formData.commissionFee} onChange={handleInputChange} placeholder="2.5" className={inputClass} />
                   </div>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg border border-on-surface/10">
@@ -141,7 +141,7 @@ export default function AdminPage() {
             </section>
 
             {/* Step 04 */}
-            <section className="glass-panel p-6 rounded-xl border border-on-surface/5">
+            <section className="bg-surface-container-low p-6 rounded-xl border border-on-surface/5">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">04</div>
                 <h2 className="text-xl font-headline font-bold">{t("admin.provenance")}</h2>

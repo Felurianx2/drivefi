@@ -16,21 +16,25 @@ export function BottomNav() {
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-3 bg-surface/95 backdrop-blur-xl rounded-t-xl shadow-[0_-4px_40px_rgba(0,0,0,0.15)] border-t border-on-surface/5">
+    <nav
+      aria-label="Mobile navigation"
+      className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-3 bg-surface/95 backdrop-blur-xl rounded-t-xl shadow-[0_-4px_40px_rgba(0,0,0,0.15)] border-t border-on-surface/5"
+    >
       {navItems.map(item => {
         const isActive = pathname === item.href || pathname?.startsWith(item.href + "/");
         return (
           <Link
             key={item.href}
             href={item.href}
-            className={`flex flex-col items-center justify-center rounded-xl px-3 py-1 transition-all duration-200 ${
+            aria-current={isActive ? "page" : undefined}
+            className={`flex flex-col items-center justify-center rounded-xl px-3 py-1 min-h-[44px] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
               isActive
                 ? "bg-primary/10 text-primary"
                 : "text-on-surface-variant opacity-60 hover:bg-primary/5 hover:opacity-100"
             }`}
           >
-            <span className="material-symbols-outlined text-xl">{item.icon}</span>
-            <span className="font-inter text-[10px] uppercase tracking-widest mt-0.5">{item.label}</span>
+            <span className="material-symbols-outlined text-xl" aria-hidden="true">{item.icon}</span>
+            <span className="font-label text-[10px] uppercase tracking-widest mt-0.5">{item.label}</span>
           </Link>
         );
       })}
